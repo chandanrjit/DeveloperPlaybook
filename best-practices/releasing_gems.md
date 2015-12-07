@@ -4,7 +4,7 @@
 
 > Version numbers and the way they change convey meaning about the underlying code and what has been modified from one version to the next.
 
-In DLSS, we practice [semantic versioning](http://semver.org) for our gems.
+In DLSS, we practice [semantic versioning](http://semver.org) for our gems; see also: [SemVer for Library Maintainers](http://www.schneems.com/2015/11/29/what-is-semver.html) blog.
 
 ## Bundler tasks
 
