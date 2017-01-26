@@ -59,6 +59,8 @@ project also has a nice [Wiki](https://github.com/mperham/sidekiq/wiki) page wit
 practices etc. Overall I would say that the Sidekiq documentation is better than the Delayed Job
 docs.
 
+We use the [capistrano-sidekiq gem](https://github.com/seuros/capistrano-sidekiq) to let capistrano manage Sidekiq and sidekiq processes. If a machine with Sidekiq deployed to it reboots, there will be no sidekiq process without a developer to restart Sidekiq, either through a deployment, or `bundle` command. To solve this problem, we have a `puppet` class to set up an init script for a system level start on boot. It requires a `puppet` change, and that we manage concurrency settings in a Rails `config/sidekiq.yml` file. For example, see [exhibits](https://github.com/sul-dlss/exhibits/blob/master/config/sidekiq.yml) and [puppet](https://github.com/sul-dlss/puppet/blob/production/hieradata/node/exhibits-prod-a.stanford.edu.eyaml#L10).
+
 The DPN Synchronization application (dpn-sync) uses Sidekiq.
 
 
